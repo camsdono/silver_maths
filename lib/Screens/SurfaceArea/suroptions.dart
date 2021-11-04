@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:silver_maths/Screens/RightAngleTri/trigonemotry/sinscreen.dart';
+import 'package:silver_maths/Screens/SurfaceArea/surcuboid.dart';
 
-import '../trioption.dart';
-import 'longside.dart';
-import 'shortside.dart';
+import '../../main.dart';
 
-class PythagorasOptionsScreen extends StatelessWidget {
-  const PythagorasOptionsScreen({Key? key}) : super(key: key);
+
+class SurfaceAreaOptionsScreen extends StatelessWidget {
+  const SurfaceAreaOptionsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class PythagorasOptionsScreen extends StatelessWidget {
     ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 30));
     return Scaffold(
       appBar: AppBar(
-        title: Text("Pythagoras Options"),
+        title: const Text("Surface Area Options"),
       ),
       body: Center(
         child: Column(
@@ -25,37 +25,24 @@ class PythagorasOptionsScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => LongSideWorkingScreen()),
+                  MaterialPageRoute(builder: (context) => SurCubiodWorkingScreen()),
                 );
               },
-              child: const Text('Long Side'),
+              child: const Text('Cuboid'),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
 
             ElevatedButton(
               style: style,
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => ShortSideWorkingScreen()),
-                );
-              },
-              child: const Text('Short Side'),
-            ),
-            SizedBox(height: 10),
-
-
-            ElevatedButton(
-              style: style,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => RightAngleTriangleScreen()),
+                  MaterialPageRoute(builder: (context) => MyApp()),
                 );
               },
               child: const Text('Back'),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
           ],
         ),
       ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'Screens/RightAngleTri/trioption.dart';
-import 'Screens/Volume/voloptions.dart';
+import 'Screens/SurfaceArea/suroptions.dart';
 
 void main() => runApp(MyApp());
 
@@ -68,10 +68,10 @@ class HomeView extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => VolumeOptionsScreen()),
+                      MaterialPageRoute(builder: (context) => SurfaceAreaOptionsScreen()),
                     );
                   },
-                  child: const Text('Volume (In Dev)'),
+                  child: const Text('Surface Area'),
                 ),
                 const SizedBox(height: 10),
                 ElevatedButton(
@@ -83,11 +83,10 @@ class HomeView extends StatelessWidget {
                         return const AlertDialog(
                             backgroundColor: Colors.white,
                             content: Text(
-                                "Made By: Camsdono Studios" "\n" "Status: In Development" "\n" "Version: V0.01",
+                                "Made By: Camsdono Studios" "\n" "Status: In Development" "\n" "Version: V0.02",
                                 style: TextStyle(color: Colors.black),
                             )
                         );
-
                       },
                     );
                   },

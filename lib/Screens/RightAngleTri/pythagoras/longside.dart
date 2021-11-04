@@ -40,9 +40,13 @@ class _MyCustomFormState extends State<LongSideWorkingScreen> {
   var working2 = 0.0;
 
   void calculate() {
+    if (adjacentController.text != '') {
+      adjacent = double.parse(adjacentController.text);
+    }
+    if (oppositeController.text != '') {
+      opposite = double.parse(oppositeController.text);
+    }
     //Calculate What needs to be calculated
-    opposite = double.parse(oppositeController.text);
-    adjacent = double.parse(adjacentController.text);
     answer = opposite * opposite + adjacent * adjacent;
     answer.toString();
     answer2 = sqrt(answer);
@@ -102,24 +106,39 @@ class _MyCustomFormState extends State<LongSideWorkingScreen> {
                 // When the user presses the button, show an alert dialog containing
                 // the text that the user has entered into the text field.
                 onPressed: () {
-                  showDialog(
-                    context: context,
-                    builder: (context) {
-                      calculate();
-                      return AlertDialog(
-                          backgroundColor: Colors.white,
-                          content: Text(
-                            oppositeController.text + "²" + " + " + adjacentController.text + "²" + " = x²"  + "\n" +
-                                working1.toString() + " + " + working2.toString() + " = x²" + "\n" +
-                                answer.toString() + " = x²" + "\n" +
-                                "√" + answer.toString() + " = x²" + "\n" +
-                                "x = " + answer2.toStringAsFixed(1),
-                            style: const TextStyle(color: Colors.black),
-                          )
-                      );
-                    },
-                  );
-
+                  if (adjacentController.text != '' || oppositeController.text != '') {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        calculate();
+                        return AlertDialog(
+                            backgroundColor: Colors.white,
+                            content: Text(
+                              oppositeController.text + "²" + " + " + adjacentController.text + "²" + " = x²"  + "\n" +
+                                  working1.toString() + " + " + working2.toString() + " = x²" + "\n" +
+                                  answer.toString() + " = x²" + "\n" +
+                                  "√" + answer.toString() + " = x²" + "\n" +
+                                  "x = " + answer2.toStringAsFixed(1),
+                              style: const TextStyle(color: Colors.black),
+                            )
+                        );
+                      },
+                    );
+                  }
+                  else {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return const AlertDialog(
+                            backgroundColor: Colors.white,
+                            content: Text(
+                              "You need to fill out one of the input fields",
+                              style: TextStyle(color: Colors.black),
+                            )
+                        );
+                      },
+                    );
+                  }
                 },
 
                 tooltip: 'Work Out The Total',

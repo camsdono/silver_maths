@@ -38,8 +38,13 @@ class _MyCustomFormState extends State<TanOppositeWorkingScreen> {
 
   void calculate() {
     //Calculate What needs to be calculated
-    angle = tan(double.parse(angleController.text) * pi / 180);
-    adjacent = double.parse(adjacentController.text);
+    if (adjacentController.text != '') {
+      adjacent = double.parse(adjacentController.text);
+    }
+    if (angleController.text != '') {
+      angle = tan(double.parse(angleController.text) * pi / 180);
+    }
+
     answer = adjacent * angle;
     answer.toString();
   }
@@ -52,6 +57,7 @@ class _MyCustomFormState extends State<TanOppositeWorkingScreen> {
     //angle = tan(double.parse(angleController.text) * pi / 180);
     //answer = adjacent * angle;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text('Tan Opposite'),
       ),
@@ -94,7 +100,7 @@ class _MyCustomFormState extends State<TanOppositeWorkingScreen> {
                   // When the user presses the button, show an alert dialog containing
                   // the text that the user has entered into the text field.
                   onPressed: () {
-                    if (adjacentController.text == " " || angleController.text == " ") {
+                    if (adjacentController.text == '' || angleController.text == '') {
                       showDialog(
                         context: context,
                         builder: (context) {
