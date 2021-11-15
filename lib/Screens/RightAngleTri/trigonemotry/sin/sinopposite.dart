@@ -49,6 +49,7 @@ class _MyCustomFormState extends State<SinOppositeWorkingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text('Sin Opposite'),
       ),

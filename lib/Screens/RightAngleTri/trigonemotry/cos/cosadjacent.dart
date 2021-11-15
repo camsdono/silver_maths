@@ -52,6 +52,7 @@ class _MyCustomFormState extends State<CosAdjacentWorkingScreen> {
     //angle = tan(double.parse(angleController.text) * pi / 180);
     //answer = adjacent * angle;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text('Cos Adjacent'),
       ),

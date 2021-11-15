@@ -64,6 +64,7 @@ class _MyCustomFormState extends State<LongSideWorkingScreen> {
     //angle = tan(double.parse(angleController.text) * pi / 180);
     //answer = adjacent * angle;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text('Pythagoras Long Side'),
       ),
