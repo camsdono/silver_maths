@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../main.dart';
+import 'Maths/StraightLine/StraightLineCalculations.dart';
 import 'RightAngleTri/trioption.dart';
 import 'SurfaceArea/suroptions.dart';
 
@@ -43,6 +44,7 @@ class MathScreen extends StatelessWidget {
               child: const Text('Right Angle Triangle'),
             ),
             const SizedBox(height: 10),
+
 
             ElevatedButton(
               style: style,

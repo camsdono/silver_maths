@@ -38,18 +38,6 @@ class ChemistryScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => RightAngleTriangleScreen()),
-                );
-              },
-              child: const Text('IDK ANYMORE'),
-            ),
-            const SizedBox(height: 10),
-
-            ElevatedButton(
-              style: style,
-              onPressed: () {
-                Navigator.push(
-                  context,
                   MaterialPageRoute(builder: (context) => MyApp()),
                 );
               },

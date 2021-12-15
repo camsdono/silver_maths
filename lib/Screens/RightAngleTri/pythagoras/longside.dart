@@ -100,7 +100,6 @@ class _MyCustomFormState extends State<LongSideWorkingScreen> {
                 keyboardType: TextInputType.number,
               ),
             ),
-            const SizedBox(height: 450),
 
             Flexible(
               child: FloatingActionButton(

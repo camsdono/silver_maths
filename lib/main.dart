@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'Screens/RightAngleTri/trioption.dart';
 import 'Screens/Volume/voloptions.dart';
+import 'Screens/chemistry.dart';
+import 'Screens/maths.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
 
-      home: HomeView(title: 'SILVER Maths'),
+      home: HomeView(title: 'SILVER Pro'),
     );
   }
 }
@@ -57,10 +59,10 @@ class HomeView extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => RightAngleTriangleScreen()),
+                      MaterialPageRoute(builder: (context) => ChemistryScreen()),
                     );
                   },
-                  child: const Text('Right Angle Triangle'),
+                  child: const Text('Chemistry'),
                 ),
                 const SizedBox(height: 10),
                 ElevatedButton(
@@ -68,10 +70,10 @@ class HomeView extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => VolumeOptionsScreen()),
+                      MaterialPageRoute(builder: (context) => MathScreen()),
                     );
                   },
-                  child: const Text('Volume (In Dev)'),
+                  child: const Text('Maths'),
                 ),
                 const SizedBox(height: 10),
                 ElevatedButton(
@@ -83,7 +85,7 @@ class HomeView extends StatelessWidget {
                         return const AlertDialog(
                             backgroundColor: Colors.white,
                             content: Text(
-                                "Made By: Camsdono Studios" "\n" "Status: In Development" "\n" "Version: V0.01",
+                                "Made By: Camsdono Studios" "\n" "Status: In Development" "\n" "Version: V0.03",
                                 style: TextStyle(color: Colors.black),
                             )
                         );

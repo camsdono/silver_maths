@@ -73,7 +73,7 @@ class _MyCustomFormState extends State<TanAngleWorkingScreen> {
                   fillColor: Colors.black,
                   hintStyle: TextStyle(color: Colors.white),
                 ),
-                keyboardType: TextInputType.none,
+                keyboardType: TextInputType.number,
               ),
             ),
             const SizedBox(height: 10),

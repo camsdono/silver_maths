@@ -57,6 +57,7 @@ class _MyCustomFormState extends State<TanAdjacentWorkingScreen> {
         title: const Text('Tan Adjacent'),
       ),
       body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 16.0),
         child: Column (
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
@@ -70,7 +71,7 @@ class _MyCustomFormState extends State<TanAdjacentWorkingScreen> {
                   fillColor: Colors.black,
                   hintStyle: TextStyle(color: Colors.white),
                 ),
-                keyboardType: TextInputType.none,
+                keyboardType: TextInputType.number,
               ),
             ),
             const SizedBox(height: 10),
@@ -85,10 +86,10 @@ class _MyCustomFormState extends State<TanAdjacentWorkingScreen> {
                   fillColor: Colors.black,
                   hintStyle: TextStyle(color: Colors.white),
                 ),
-                keyboardType: TextInputType.none,
+                keyboardType: TextInputType.number,
               ),
             ),
-            const SizedBox(height: 450),
+
 
             Flexible(
               child: FloatingActionButton(
@@ -130,7 +131,7 @@ class _MyCustomFormState extends State<TanAdjacentWorkingScreen> {
           ],
 
         ),
-        padding: const EdgeInsets.all(16.0),
+
 
       ),
 

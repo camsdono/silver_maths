@@ -75,7 +75,7 @@ class _MyCustomFormState extends State<TanOppositeWorkingScreen> {
                      fillColor: Colors.black,
                      hintStyle: TextStyle(color: Colors.white),
                  ),
-                 keyboardType: TextInputType.none,
+                 keyboardType: TextInputType.number,
                ),
             ),
             const SizedBox(height: 10),
@@ -90,10 +90,9 @@ class _MyCustomFormState extends State<TanOppositeWorkingScreen> {
                     fillColor: Colors.black,
                     hintStyle: TextStyle(color: Colors.white),
                 ),
-                keyboardType: TextInputType.none,
+                keyboardType: TextInputType.number,
               ),
             ),
-            const SizedBox(height: 450),
 
             Flexible(
                 child: FloatingActionButton(

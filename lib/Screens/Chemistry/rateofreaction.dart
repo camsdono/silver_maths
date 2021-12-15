@@ -37,19 +37,33 @@ class _MyCustomFormState extends State<RateofReactionWorkingScreen> {
     super.dispose();
   }
   var answer = 0.0;
-  var answer2 = 0.0;
   var time1 = 0.0;
   var time2 = 0.0;
   var change1 = 0.0;
   var change2 = 0.0;
+  var working1 = 0.0;
+  var working2 = 0.0;
 
 
   void calculate() {
     //Calculate What needs to be calculated
-    time1 = double.parse(time1Controller.text);
-    time2 = double.parse(time2Controller.text);
-    change1 = double.parse(change1Controller.text);
-    change2 = double.parse(change2Controller.text);
+    if (time1Controller.text != "") {
+      time1 = double.parse(time1Controller.text);
+    }
+    if (time2Controller.text != "") {
+      time2 = double.parse(time2Controller.text);
+    }
+    if (change1Controller.text != "") {
+      change1 = double.parse(change1Controller.text);
+    }
+    if (change2Controller.text != "") {
+      change2 = double.parse(change2Controller.text);
+    }
+
+    working1 = time1 - time2;
+    working2 = change1 - change2;
+    answer = working2 / working1;
+    answer.toString();
   }
 
 
@@ -62,7 +76,7 @@ class _MyCustomFormState extends State<RateofReactionWorkingScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: const Text('Cuboid Surface Area'),
+        title: const Text('Calculating Rate Of Reaction'),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -132,20 +146,39 @@ class _MyCustomFormState extends State<RateofReactionWorkingScreen> {
             ),
             FloatingActionButton(
               onPressed: () {
-                showDialog(
-                  context: context,
-                  builder: (context) {
-                    calculate();
-                    return const AlertDialog(
-                        backgroundColor: Colors.white,
-                        content: Text(
-                          "Test",
-                          style: TextStyle(color: Colors.black),
-                        )
-                    );
-                  },
-                );
-
+                if (time1Controller.text != '' || time2Controller.text != '') {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      calculate();
+                      return AlertDialog(
+                          backgroundColor: Colors.white,
+                          content: Text(
+                                change1Controller.text + " - " + change2Controller.text + "\n" +
+                                "-----------" "\n" +
+                                time1Controller.text + " - " + time2Controller.text + "\n" +
+                                "= " + working2.toString() + " / " + working1.toString() + "\n" +
+                            "= " + answer.toStringAsFixed(2) + unitController.text,
+                            style: const TextStyle(color: Colors.black),
+                          )
+                      );
+                    },
+                  );
+                }
+                else {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return const AlertDialog(
+                          backgroundColor: Colors.white,
+                          content: Text(
+                            "You need to fill out one of the input fields",
+                            style: TextStyle(color: Colors.black),
+                          )
+                      );
+                    },
+                  );
+                }
               },
               tooltip: 'Work Out The Total',
               child: const Text(
